@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SciCalc:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SciCalc_jar</output-path>
+    <root id="archive" name="SciCalc.jar">
+      <element id="module-output" name="SciCalc" />
+    </root>
+  </artifact>
+</component>

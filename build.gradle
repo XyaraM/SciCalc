@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'org.Xyaram'
+version '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+dependencies {
+}
+
+test {
+}
