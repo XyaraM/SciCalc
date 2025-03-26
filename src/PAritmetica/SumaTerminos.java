@@ -1,7 +1,6 @@
 package PAritmetica;
 
 import Actions.Calculacion;
-import Actions.Suma;
 
 public class SumaTerminos extends Calculacion {
     int PrimerTermino;

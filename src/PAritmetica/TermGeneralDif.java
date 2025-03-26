@@ -8,7 +8,6 @@ public class TermGeneralDif extends Calculacion{
     static int DiferenciaDef;
     static int PosicionEncontrar;
     static int NumeroIgualador;
-    static int resultD;
 
     public TermGeneralDif(int PrimerTermino, int Diferencia, int PosicionEncontrar) {
         TermGeneralDif.PrimerTermino = PrimerTermino;
@@ -19,12 +18,10 @@ public class TermGeneralDif extends Calculacion{
         //Formula a seguir: Dn + ? (NumeroIgualador)
         if (PrimerTermino < 0){
             numeroIgualadorNegativo();
-            int R1N = Diferencia * PosicionEncontrar + NumeroIgualador;
-            result = R1N;
+            result = Diferencia * PosicionEncontrar + NumeroIgualador;
         }else{
             numeroIgualadorPositivo();
-            int R1N = Diferencia * PosicionEncontrar + NumeroIgualador;
-            result = R1N;
+            result = Diferencia * PosicionEncontrar + NumeroIgualador;
         }
         limpiezaVariables();
     }
