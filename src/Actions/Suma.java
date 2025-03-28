@@ -11,7 +11,6 @@ public class Suma extends Calculacion {
     }
 
     public void calc(int s1, int s2){
-
         result = s1 + s2;
     }
 }

@@ -1,6 +1,7 @@
-package GUI;
+package GUI.Core;
 
 import Actions.Calculacion;
+import GUI.Actions.RestaGUI;
 import GUI.Actions.SumaGUI;
 
 import javax.swing.*;
@@ -20,19 +21,34 @@ public class GUI {
         frame.setVisible(true);
 
         JButton botonSuma = new JButton("Suma");
+        JButton botonResta = new JButton("Resta");
 
-        botonSuma.setBounds(150, 200, 220, 50);
+        botonSuma.setBounds(30, 100, 220, 50);
+        botonResta.setBounds(30, 170, 220, 50);
 
         frame.add(botonSuma);
+        frame.add(botonResta);
+
+        botonResta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                restaAction();
+            }
+        });
+
         botonSuma.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                clickTest();
+                sumaAction();
             }
         });
     }
 
-    public void clickTest(){
+    public void sumaAction(){
         new SumaGUI();
+    }
+
+    public void restaAction(){
+        new RestaGUI();
     }
 }

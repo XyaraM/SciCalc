@@ -2,16 +2,18 @@ package GUI.Actions;
 
 import javax.swing.*;
 
-import Actions.Calculacion;
 import Actions.Suma;
+import GUI.Core.Resultado;
+import GUI.Core.SubMenuGUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SumaGUI{
+public class SumaGUI extends Resultado {
     public int firstTerm;
     public int secondTerm;
 
+    //Se instancia y se hace un override a Suma.java, calc es el metodo que se encarga de sumar s1 y s2, para luego guardarlo en la variable de resultado
     Suma S = new Suma(){
         @Override
         public void calc(int s1, int s2) {
@@ -19,27 +21,29 @@ public class SumaGUI{
         }
     };
 
+    //Crea un metodo para que cuando SumaGUI sea instanciada desde GUI.java se muestre la ventana de abajo
     public SumaGUI(){
         sumaGui();
     }
 
+    //Esta ventana
     public void sumaGui(){
-        JFrame frame = new JFrame();
-        frame.setSize(500, 600);
-        frame.setLayout(null);
-        frame.setVisible(true);
 
+        //Instancia el SubMenuGUI, la ventana que se abre cuando pulsas el boton de sumar, y agrega el cubito de calculo que tendra el resultado
+        SubMenuGUI menuMadre = new SubMenuGUI();
+        menuMadre.menuOperaciones(new JFrame());
+        calculo(SubMenuGUI.frameDef);
+
+        //Crea dos casillas para colocar texto, junto a un boton para sumar cuando es pulsado
         JTextField suma = new JTextField();
         suma.setBounds(100, 100, 100, 30);
         JTextField suma2 = new JTextField();
         suma2.setBounds(100, 200, 100, 30);
-
         JButton botonResultado = new JButton("Sumar");
         botonResultado.setBounds(100, 300, 200, 200);
 
-        JTextArea resultado = new JTextArea("0");
-        resultado.setBounds(100, 600, 200, 200);
-
+        //Esta es la logica del boton, cuando es pulsado las dos variables del inicio pasan a tener un valor de string que sera sacado de los botones "getText()",
+        //y finalmente se llama a butP que tomara la variable result y la mostrara en pantalla
         botonResultado.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,14 +51,13 @@ public class SumaGUI{
                 firstTerm = Integer.parseInt(suma.getText());
                 secondTerm = Integer.parseInt(suma2.getText());
                 S.calc(firstTerm, secondTerm);
-                resultado.setText(String.valueOf(Calculacion.result));
+                butP();
             }
         });
-        frame.add(suma);
-        frame.add(suma2);
-        frame.add(botonResultado);
-        frame.add(resultado);
 
+        //Finalmente los contenidos creados en esta ventana son añadidos al frame de SubMenuGUI.java, el cual es la madre de esta aberracion que me atrevo a llamar programacion de swing
+        SubMenuGUI.frameDef.add(suma);
+        SubMenuGUI.frameDef.add(suma2);
+        SubMenuGUI.frameDef.add(botonResultado);
     }
-
 }

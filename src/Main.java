@@ -1,5 +1,5 @@
 import Actions.*;
-import GUI.GUI;
+import GUI.Core.GUI;
 import PAritmetica.SumaTerminos;
 import PAritmetica.TerminoNesimoDif;
 import PAritmetica.TermGeneralDif;
