@@ -4,6 +4,7 @@ public class Calculacion {
     public static int result;
     public static String resultStr;
     public static boolean fracverify;
+    public static boolean isGuiOpen;
 
     public void displayResult(){
         if (fracverify){
@@ -16,4 +17,6 @@ public class Calculacion {
         System.out.println("El resultado es: " + resultString);
         System.out.println("--------------------------");
     }
+
+
 }
