@@ -15,4 +15,8 @@ public class Resultado {
         resultado.setText(String.valueOf(Calculacion.result));
     }
 
+    public void butF(){
+        resultado.setText(Calculacion.resultStr);
+    }
+
 }

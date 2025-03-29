@@ -1,8 +1,7 @@
 package GUI.Core;
 
 import Actions.Calculacion;
-import GUI.Actions.RestaGUI;
-import GUI.Actions.SumaGUI;
+import GUI.Actions.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -22,12 +21,28 @@ public class GUI {
 
         JButton botonSuma = new JButton("Suma");
         JButton botonResta = new JButton("Resta");
+        JButton botonMultiplicacion = new JButton("Multiplicacion");
+        JButton botonDivision = new JButton("Division");
+        JButton botonFrac = new JButton("Fracciones");
 
         botonSuma.setBounds(30, 100, 220, 50);
         botonResta.setBounds(30, 170, 220, 50);
+        botonMultiplicacion.setBounds(30, 240, 220, 50);
+        botonDivision.setBounds(30, 310, 220, 50);
+        botonFrac.setBounds(30, 380, 220, 50);
 
         frame.add(botonSuma);
         frame.add(botonResta);
+        frame.add(botonMultiplicacion);
+        frame.add(botonDivision);
+        frame.add(botonFrac);
+
+        botonMultiplicacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                multiplicacionAction();
+            }
+        });
 
         botonResta.addActionListener(new ActionListener() {
             @Override
@@ -42,6 +57,24 @@ public class GUI {
                 sumaAction();
             }
         });
+
+        botonDivision.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                diviAction();
+            }
+        });
+
+        botonFrac.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fracAction();
+            }
+        });
+    }
+
+    public void multiplicacionAction(){
+        new MultiplicacionGUI();
     }
 
     public void sumaAction(){
@@ -50,5 +83,13 @@ public class GUI {
 
     public void restaAction(){
         new RestaGUI();
+    }
+
+    public void diviAction(){
+        new DivisionGUI();
+    }
+
+    public void fracAction(){
+        new FraccionGUI();
     }
 }

@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import Actions.Suma;
 import GUI.Core.Resultado;
-import GUI.Core.SubMenuGUI;
+import GUI.Core.SubNivelGUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,9 +30,9 @@ public class SumaGUI extends Resultado {
     public void sumaGui(){
 
         //Instancia el SubMenuGUI, la ventana que se abre cuando pulsas el boton de sumar, y agrega el cubito de calculo que tendra el resultado
-        SubMenuGUI menuMadre = new SubMenuGUI();
+        SubNivelGUI menuMadre = new SubNivelGUI();
         menuMadre.menuOperaciones(new JFrame());
-        calculo(SubMenuGUI.frameDef);
+        calculo(SubNivelGUI.frameDef);
 
         //Crea dos casillas para colocar texto, junto a un boton para sumar cuando es pulsado
         JTextField suma = new JTextField();
@@ -56,8 +56,8 @@ public class SumaGUI extends Resultado {
         });
 
         //Finalmente los contenidos creados en esta ventana son añadidos al frame de SubMenuGUI.java, el cual es la madre de esta aberracion que me atrevo a llamar programacion de swing
-        SubMenuGUI.frameDef.add(suma);
-        SubMenuGUI.frameDef.add(suma2);
-        SubMenuGUI.frameDef.add(botonResultado);
+        SubNivelGUI.frameDef.add(suma);
+        SubNivelGUI.frameDef.add(suma2);
+        SubNivelGUI.frameDef.add(botonResultado);
     }
 }

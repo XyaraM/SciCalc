@@ -2,7 +2,7 @@ package GUI.Core;
 
 import javax.swing.*;
 
-public class SubMenuGUI extends Resultado{
+public class SubNivelGUI extends Resultado{
     public static JFrame frameDef;
 
     public void menuOperaciones(JFrame NombreJFrame){
