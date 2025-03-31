@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 public class GUI {
 
+    public static int botonVolverValor;
     public GUI(){
         GUII();
     }
@@ -24,18 +25,21 @@ public class GUI {
         JButton botonMultiplicacion = new JButton("Multiplicacion");
         JButton botonDivision = new JButton("Division");
         JButton botonFrac = new JButton("Fracciones");
+        JButton botonPro = new JButton("Progresiones");
 
         botonSuma.setBounds(30, 100, 220, 50);
         botonResta.setBounds(30, 170, 220, 50);
         botonMultiplicacion.setBounds(30, 240, 220, 50);
         botonDivision.setBounds(30, 310, 220, 50);
         botonFrac.setBounds(30, 380, 220, 50);
+        botonPro.setBounds(30, 450, 220, 50);
 
         frame.add(botonSuma);
         frame.add(botonResta);
         frame.add(botonMultiplicacion);
         frame.add(botonDivision);
         frame.add(botonFrac);
+        frame.add(botonPro);
 
         botonMultiplicacion.addActionListener(new ActionListener() {
             @Override
@@ -71,6 +75,13 @@ public class GUI {
                 fracAction();
             }
         });
+
+        botonPro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                proAction();
+            }
+        });
     }
 
     public void multiplicacionAction(){
@@ -91,5 +102,9 @@ public class GUI {
 
     public void fracAction(){
         new FraccionGUI();
+    }
+
+    public void proAction(){
+        new ProgresionGUI();
     }
 }

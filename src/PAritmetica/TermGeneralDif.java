@@ -10,21 +10,9 @@ public class TermGeneralDif extends Calculacion{
     static int NumeroIgualador;
 
     public TermGeneralDif(int PrimerTermino, int Diferencia, int PosicionEncontrar) {
-        TermGeneralDif.PrimerTermino = PrimerTermino;
-        TermGeneralDif.DiferenciaCalc = Diferencia;
-        TermGeneralDif.DiferenciaDef = Diferencia;
-        TermGeneralDif.PosicionEncontrar = PosicionEncontrar;
-
-        //Formula a seguir: Dn + ? (NumeroIgualador)
-        if (PrimerTermino < 0){
-            numeroIgualadorNegativo();
-            result = Diferencia * PosicionEncontrar + NumeroIgualador;
-        }else{
-            numeroIgualadorPositivo();
-            result = Diferencia * PosicionEncontrar + NumeroIgualador;
-        }
-        limpiezaVariables();
+        calc(PrimerTermino, Diferencia, PosicionEncontrar);
     }
+
     static void numeroIgualadorPositivo(){
         while (DiferenciaCalc <= PrimerTermino){
             //NumeroIgualador es el numero igualador
@@ -47,5 +35,26 @@ public class TermGeneralDif extends Calculacion{
         DiferenciaDef = 0;
         PosicionEncontrar = 0;
         NumeroIgualador = 0;
+    }
+
+    public TermGeneralDif() {
+
+    }
+
+    public void calc(int PrimerTermino, int Diferencia, int PosicionEncontrar){
+        TermGeneralDif.PrimerTermino = PrimerTermino;
+        TermGeneralDif.DiferenciaCalc = Diferencia;
+        TermGeneralDif.DiferenciaDef = Diferencia;
+        TermGeneralDif.PosicionEncontrar = PosicionEncontrar;
+
+        //Formula a seguir: Dn + ? (NumeroIgualador)
+        if (PrimerTermino < 0){
+            numeroIgualadorNegativo();
+            result = Diferencia * PosicionEncontrar + NumeroIgualador;
+        }else{
+            numeroIgualadorPositivo();
+            result = Diferencia * PosicionEncontrar + NumeroIgualador;
+        }
+        limpiezaVariables();
     }
 }

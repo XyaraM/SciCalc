@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // new GUI();
+        new GUI();
         while(true){
             System.out.println("Selecciona la operacion que quieres realizar \n \nSi quieres ver las operaciones disponibles escribe Ayuda.");
             Scanner bootup = new Scanner(System.in);
