@@ -6,6 +6,7 @@ import GUI.Core.SubNivelGUI;
 import PAritmetica.TerminoNesimoDif;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -31,23 +32,28 @@ public class TerminoNEsimoGUI extends Resultado {
 
         calculo(SubNivelGUI.frameDef);
 
-        JTextField primerTermino = new JTextField();
-        JTextField posicionTermino = new JTextField();
-        JTextField posicionAK = new JTextField();
-        JTextField diferencia = new JTextField();
-        JButton calcular = new JButton();
+        JTextField primerTermino = new JTextField("Ak");
+        JTextField posicionTermino = new JTextField("K");
+        JTextField posicionAK = new JTextField("N");
+        JTextField diferencia = new JTextField("D");
+        JButton calcular = new JButton("Calcular");
+        JLabel text = new JLabel("An = Ak + (k-n) * D");
 
-        primerTermino.setBounds(50, 50, 30, 30);
-        posicionTermino.setBounds(80, 50, 30, 30);
-        posicionAK.setBounds(110, 50, 30, 30);
-        diferencia.setBounds(140, 50, 30, 30);
-        calcular.setBounds(190, 50, 30, 30);
+        primerTermino.setBounds(220, 50, 60, 30);
+        posicionTermino.setBounds(220, 90, 60, 30);
+        posicionAK.setBounds(220, 130, 60, 30);
+        diferencia.setBounds(220, 170, 60, 30);
+        calcular.setBounds(204, 220, 90, 30);
+        text.setBounds(160, 10, 190, 40);
+        text.setForeground(Color.white);
+        text.setFont(new Font("helvetica", Font.BOLD, 20));
 
         SubNivelGUI.frameDef.add(primerTermino);
         SubNivelGUI.frameDef.add(posicionTermino);
         SubNivelGUI.frameDef.add(posicionAK);
         SubNivelGUI.frameDef.add(diferencia);
         SubNivelGUI.frameDef.add(calcular);
+        SubNivelGUI.frameDef.add(text);
         new BotonVolverGUI(SubNivelGUI.frameDef); // Crea el boton volver
 
         calcular.addActionListener(new ActionListener() {

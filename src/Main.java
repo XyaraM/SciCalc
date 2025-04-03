@@ -1,16 +1,29 @@
 import Actions.*;
 import GUI.Core.GUI;
+import GUI.Core.SubNivelGUI;
 import PAritmetica.SumaTerminos;
 import PAritmetica.TerminoNesimoDif;
 import PAritmetica.TermGeneralDif;
 import Fractions.Fracciones;
 import PGeometrica.NEsimoSucesion;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         new GUI();
+
+        if (Calculacion.isGuiOpen){
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("com.sun.java.swing.plaf.gtk.GTKLookAndFeel".equals(info.getClassName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    GUI.frame.repaint();
+                    break;
+                }
+            }
+        }
+
         while(true){
             System.out.println("Selecciona la operacion que quieres realizar \n \nSi quieres ver las operaciones disponibles escribe Ayuda.");
             Scanner bootup = new Scanner(System.in);

@@ -2,9 +2,11 @@ package GUI.Actions;
 
 import Actions.Division;
 import GUI.Core.Resultado;
+import GUI.Core.SimboloSRMDGUI;
 import GUI.Core.SubNivelGUI;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,16 +27,26 @@ public class DivisionGUI extends Resultado {
 
     public void menuDivi(){
 
+        SimboloSRMDGUI simb = new SimboloSRMDGUI(){
+            @Override
+            public void simb(int simboloNumero) {
+                super.simb(simboloNumero);
+            }
+        };
+
         SubNivelGUI menuMadre = new SubNivelGUI();
         menuMadre.menuOperaciones(new JFrame());
         calculo(SubNivelGUI.frameDef);
 
         JTextField divi1 = new JTextField();
-        divi1.setBounds(100, 100, 100, 30);
         JTextField divi2 = new JTextField();
-        divi2.setBounds(100, 200, 100, 30);
         JButton botonResultado = new JButton("Dividir");
-        botonResultado.setBounds(100, 300, 200, 200);
+        simb.simb(4);
+
+        divi1.setBounds(100, 100, 100, 30);
+        divi2.setBounds(290, 100, 100, 30);
+        botonResultado.setBounds(145, 230, 200, 100);
+
 
         botonResultado.addActionListener(new ActionListener() {
             @Override

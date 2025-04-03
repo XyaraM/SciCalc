@@ -2,9 +2,11 @@ package GUI.Actions;
 
 import Actions.Multiplicacion;
 import GUI.Core.Resultado;
+import GUI.Core.SimboloSRMDGUI;
 import GUI.Core.SubNivelGUI;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,16 +27,26 @@ public class MultiplicacionGUI extends Resultado {
 
     public void menuMulti(){
 
+        SimboloSRMDGUI simb = new SimboloSRMDGUI(){
+            @Override
+            public void simb(int simboloNumero) {
+                super.simb(simboloNumero);
+            }
+        };
+
         SubNivelGUI menuMadre = new SubNivelGUI();
         menuMadre.menuOperaciones(new JFrame());
         calculo(SubNivelGUI.frameDef);
 
         JTextField multi1 = new JTextField();
-        multi1.setBounds(100, 100, 100, 30);
         JTextField multi2 = new JTextField();
-        multi2.setBounds(100, 200, 100, 30);
         JButton botonResultado = new JButton("Multiplicar");
-        botonResultado.setBounds(100, 300, 200, 200);
+        simb.simb(3);
+
+        multi1.setBounds(100, 100, 100, 30);
+        multi2.setBounds(290, 100, 100, 30);
+        botonResultado.setBounds(145, 230, 200, 100);
+
 
         botonResultado.addActionListener(new ActionListener() {
             @Override

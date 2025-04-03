@@ -6,6 +6,7 @@ import GUI.Core.SubNivelGUI;
 import PAritmetica.SumaTerminos;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,20 +30,26 @@ public class SumaTerminosGUI extends Resultado {
            }
        };
 
-       JTextField t1 = new JTextField();
-       JTextField t2 = new JTextField();
-       JTextField t3 = new JTextField();
+       JTextField t1 = new JTextField("A1");
+       JTextField t2 = new JTextField("An");
+       JTextField t3 = new JTextField("N");
        JButton botonCalculo = new JButton("Calcular");
+       JLabel text = new JLabel("(A1 + An) * N / 2");
 
-       t1.setBounds(100, 100, 30, 30);
-       t2.setBounds(130, 100, 30, 30);
-       t3.setBounds(160, 100, 30, 30);
-       botonCalculo.setBounds(200, 100, 30, 30);
+
+       t1.setBounds(220, 50, 60, 30);
+       t2.setBounds(220, 90, 60, 30);
+       t3.setBounds(220, 130, 60, 30);
+       botonCalculo.setBounds(204, 180, 90, 30);
+       text.setBounds(170, 10, 190, 40);
+       text.setForeground(Color.white);
+       text.setFont(new Font("helvetica", Font.BOLD, 20));
 
        SubNivelGUI.frameDef.add(t1);
        SubNivelGUI.frameDef.add(t2);
        SubNivelGUI.frameDef.add(t3);
        SubNivelGUI.frameDef.add(botonCalculo);
+       SubNivelGUI.frameDef.add(text);
        new BotonVolverGUI(SubNivelGUI.frameDef);
 
        botonCalculo.addActionListener(new ActionListener() {

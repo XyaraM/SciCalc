@@ -4,8 +4,10 @@ import javax.swing.*;
 
 import Actions.Suma;
 import GUI.Core.Resultado;
+import GUI.Core.SimboloSRMDGUI;
 import GUI.Core.SubNivelGUI;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,18 +31,29 @@ public class SumaGUI extends Resultado {
     //Esta ventana
     public void sumaGui(){
 
+        //Esto instancia el simbolo de calculo
+        SimboloSRMDGUI simb = new SimboloSRMDGUI(){
+            @Override
+            public void simb(int simboloNumero) {
+                super.simb(simboloNumero);
+            }
+        };
+
         //Instancia el SubMenuGUI, la ventana que se abre cuando pulsas el boton de sumar, y agrega el cubito de calculo que tendra el resultado
         SubNivelGUI menuMadre = new SubNivelGUI();
         menuMadre.menuOperaciones(new JFrame());
         calculo(SubNivelGUI.frameDef);
 
-        //Crea dos casillas para colocar texto, junto a un boton para sumar cuando es pulsado
+        //Crea dos casillas para colocar texto, junto a un boton para sumar cuando es pulsado, y coloca el simbolo del centro
         JTextField suma = new JTextField();
-        suma.setBounds(100, 100, 100, 30);
         JTextField suma2 = new JTextField();
-        suma2.setBounds(100, 200, 100, 30);
         JButton botonResultado = new JButton("Sumar");
-        botonResultado.setBounds(100, 300, 200, 200);
+        simb.simb(1);
+
+        suma.setBounds(100, 100, 100, 30);
+        suma2.setBounds(290, 100, 100, 30);
+        botonResultado.setBounds(145, 230, 200, 100);
+
 
         //Esta es la logica del boton, cuando es pulsado las dos variables del inicio pasan a tener un valor de string que sera sacado de los botones "getText()",
         //y finalmente se llama a butP que tomara la variable result y la mostrara en pantalla

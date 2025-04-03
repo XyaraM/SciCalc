@@ -3,6 +3,7 @@ package GUI.Actions;
 import Fractions.Fracciones;
 import Fractions.Operaciones;
 import GUI.Core.Resultado;
+import GUI.Core.SimboloSRMDGUI;
 import GUI.Core.SubNivelGUI;
 
 import javax.swing.*;
@@ -26,6 +27,12 @@ public class FraccionGUI extends Resultado {
         }
     };
 
+    SimboloSRMDGUI Fr = new SimboloSRMDGUI(){
+        @Override
+        public void simb(int simboloNumero) {
+            super.simb(simboloNumero);
+        }
+    };
 
     public FraccionGUI(){
         fraGUI();
@@ -43,14 +50,14 @@ public class FraccionGUI extends Resultado {
         JButton botonMultiplicacion = new JButton("Multiplicacion");
         JButton botonDivision = new JButton("Division");
 
-        numerador1.setBounds(100, 100, 30, 30);
-        denominador1.setBounds(140, 100, 30, 30);
-        numerador2.setBounds(100, 140, 30, 30);
-        denominador2.setBounds(140, 140, 30, 30);
-        botonSuma.setBounds(180, 140, 30, 30);
-        botonResta.setBounds(210, 140, 30, 30);
-        botonMultiplicacion.setBounds(240, 140, 30, 30);
-        botonDivision.setBounds(270, 140, 30, 30);
+        numerador1.setBounds(170, 100, 50, 50);
+        denominador1.setBounds(170, 160, 50, 50);
+        numerador2.setBounds(290, 100, 50, 50);
+        denominador2.setBounds(290, 160, 50, 50);
+        botonSuma.setBounds(220, 260, 70, 30);
+        botonResta.setBounds(220, 300, 70, 30);
+        botonMultiplicacion.setBounds(220, 340, 70, 30);
+        botonDivision.setBounds(220, 380, 70, 30);
 
         botonSuma.addActionListener(new ActionListener() {
             @Override
@@ -108,6 +115,7 @@ public class FraccionGUI extends Resultado {
         SubNivelGUI.frameDef.add(botonResta);
         SubNivelGUI.frameDef.add(botonMultiplicacion);
         SubNivelGUI.frameDef.add(botonDivision);
+        Fr.simb(5);
 
     }
 

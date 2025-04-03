@@ -1,5 +1,6 @@
 package Fractions;
 import Actions.Calculacion;
+import GUI.Core.Resultado;
 
 public class Operaciones{
     static Integer numerador;
@@ -12,6 +13,7 @@ public class Operaciones{
     static Integer X2D;
     static Integer SDS;
 
+
     public static void sumaresta(){
         int muldeno = denominador * denominador2;
         Integer X1S = numerador * denominador2;
@@ -21,7 +23,7 @@ public class Operaciones{
         }else{
             SDS = X1S - X2S;
         }
-        Calculacion.resultStr = "\n Numerador: " + SDS + "\n Denominador: " + muldeno;
+        guiVerificacionYPrint(1, muldeno);
         limpiezaVariables();
     }
 
@@ -29,12 +31,15 @@ public class Operaciones{
         if (Fracciones.isMultiplying){
             X1M = denominador * denominador2;
             X2M = numerador * numerador2;
-            Calculacion.resultStr = "\n Numerador: " + X2M + "\n Denominador: " + X1M;
+            // Calculacion.resultStr = "\n Numerador: " + X2M + "\n Denominador: " + X1M; Codigo legacy que esta mas para comprender mejor como funciona esta cagada
+            guiVerificacionYPrint(2, 0);
         }else{
             X1D = numerador * denominador2;
             X2D = numerador2 * denominador;
-            Calculacion.resultStr = "\n Numerador: " + X1D + "\n Denominador: " + X2D;
+            // Calculacion.resultStr = "\n Numerador: " + X1D + "\n Denominador: " + X2D; Codigo legacy que esta mas para comprender mejor como funciona esta cagada
+            guiVerificacionYPrint(3, 0);
         }
+
         limpiezaVariables();
     }
 
@@ -48,5 +53,39 @@ public class Operaciones{
         X1D = 0;
         X2D = 0;
         SDS = 0;
+    }
+
+    public static void guiVerificacionYPrint(int seleccion, int muldeno){
+
+        switch (seleccion){
+            case 1:
+                //Suma y resta
+                if (Calculacion.isGuiOpen){
+                    Resultado.fracNumerador = SDS;
+                    Resultado.fracDenominador = muldeno;
+                }else{
+                    Calculacion.resultStr = "\n Numerador: " + SDS + "\n Denominador: " + muldeno;
+                }
+                break;
+            case 2:
+                // Multiplicacion
+                if (Calculacion.isGuiOpen){
+                    Resultado.fracNumerador = X2M;
+                    Resultado.fracDenominador = X1M;
+                }else{
+                    Calculacion.resultStr = "\n Numerador: " + X2M + "\n Denominador: " + X1M;
+                }
+                break;
+            case 3:
+                //Division
+                if (Calculacion.isGuiOpen){
+                    Resultado.fracNumerador = X1D;
+                    Resultado.fracDenominador = X2D;
+                }else{
+                    Calculacion.resultStr = "\n Numerador: " + X1D + "\n Denominador: " + X2D;
+
+                }
+                break;
+        }
     }
 }

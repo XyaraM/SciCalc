@@ -25,22 +25,22 @@ public class ProgresionGUI extends Resultado {
         JButton terminoNEsimo = new JButton("N-Esimo");
         JButton generalDif = new JButton("Termino General");
         JButton sumaTerminos = new JButton("Suma Terminos");
+        JButton NEsimoPro = new JButton("P-Geometricas");
 
-        terminoNEsimo.setBounds(100, 100, 100, 30);
-        generalDif.setBounds(130, 100, 100, 30);
-        sumaTerminos.setBounds(160, 100, 100, 30);
+        terminoNEsimo.setBounds(174, 100, 150, 30);
+        generalDif.setBounds(174, 130, 150, 30);
+        sumaTerminos.setBounds(174, 160, 150, 30);
+        NEsimoPro.setBounds(174, 190, 150, 30);
 
         SubNivelGUI.frameDef.add(terminoNEsimo);
         SubNivelGUI.frameDef.add(generalDif);
         SubNivelGUI.frameDef.add(sumaTerminos);
+        SubNivelGUI.frameDef.add(NEsimoPro);
 
         terminoNEsimo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GUI.botonVolverValor = 1; //Le da el valor a la variable para hacer dos cosas: Que cuando el boton de volver sea pulsado no se cree otra ventana (El if de mas arriba), y en la clase del boton volver se pueda retroceder a esta clase de aca
-                SubNivelGUI.frameDef.getContentPane().removeAll();
-                SubNivelGUI.frameDef.revalidate();
-                SubNivelGUI.frameDef.repaint();
+                volver();
                 terminoNEsimo();
             }
         });
@@ -48,10 +48,7 @@ public class ProgresionGUI extends Resultado {
         generalDif.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GUI.botonVolverValor = 1; //Le da el valor a la variable para hacer dos cosas: Que cuando el boton de volver sea pulsado no se cree otra ventana (El if de mas arriba), y en la clase del boton volver se pueda retroceder a esta clase de aca
-                SubNivelGUI.frameDef.getContentPane().removeAll();
-                SubNivelGUI.frameDef.revalidate();
-                SubNivelGUI.frameDef.repaint();
+                volver();
                 generalDif();
             }
         });
@@ -59,11 +56,16 @@ public class ProgresionGUI extends Resultado {
         sumaTerminos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GUI.botonVolverValor = 1; //Le da el valor a la variable para hacer dos cosas: Que cuando el boton de volver sea pulsado no se cree otra ventana (El if de mas arriba), y en la clase del boton volver se pueda retroceder a esta clase de aca
-                SubNivelGUI.frameDef.getContentPane().removeAll();
-                SubNivelGUI.frameDef.revalidate();
-                SubNivelGUI.frameDef.repaint();
+                volver();
                 sumaDif();
+            }
+        });
+
+        NEsimoPro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                volver();
+                NEsimoSucesion();
             }
         });
     }
@@ -78,5 +80,16 @@ public class ProgresionGUI extends Resultado {
 
     public void sumaDif(){
         new SumaTerminosGUI();
+    }
+
+    public void NEsimoSucesion(){
+        new ProgresionesGeometricasGUI();
+    }
+
+    public void volver(){
+        GUI.botonVolverValor = 1; //Le da el valor a la variable para hacer dos cosas: Que cuando el boton de volver sea pulsado no se cree otra ventana (El if de mas arriba), y en la clase del boton volver se pueda retroceder a esta clase de aca
+        SubNivelGUI.frameDef.getContentPane().removeAll();
+        SubNivelGUI.frameDef.revalidate();
+        SubNivelGUI.frameDef.repaint();
     }
 }
