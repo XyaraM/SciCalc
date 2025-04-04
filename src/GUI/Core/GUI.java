@@ -5,8 +5,6 @@ import GUI.Actions.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class GUI {
     public static JFrame frame = new JFrame();
@@ -19,6 +17,8 @@ public class GUI {
         frame.setSize(600, 500);
         frame.setLayout(null);
         frame.setVisible(true);
+        frame.setMinimumSize(new Dimension(600, 500));
+        frame.setMaximizedBounds(new Rectangle(600, 500));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         JButton botonSuma = new JButton("Suma");
@@ -50,47 +50,17 @@ public class GUI {
         frame.add(botonPro);
         frame.add(title);
 
-        botonMultiplicacion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                multiplicacionAction();
-            }
-        });
+        botonMultiplicacion.addActionListener(e -> multiplicacionAction());
 
-        botonResta.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                restaAction();
-            }
-        });
+        botonResta.addActionListener(e -> restaAction());
 
-        botonSuma.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                sumaAction();
-            }
-        });
+        botonSuma.addActionListener(e -> sumaAction());
 
-        botonDivision.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                diviAction();
-            }
-        });
+        botonDivision.addActionListener(e -> diviAction());
 
-        botonFrac.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                fracAction();
-            }
-        });
+        botonFrac.addActionListener(e -> fracAction());
 
-        botonPro.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                proAction();
-            }
-        });
+        botonPro.addActionListener(e -> proAction());
     }
 
     public void multiplicacionAction(){

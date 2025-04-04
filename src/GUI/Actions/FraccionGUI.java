@@ -7,8 +7,6 @@ import GUI.Core.SimboloSRMDGUI;
 import GUI.Core.SubNivelGUI;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class FraccionGUI extends Resultado {
     public int n1;
@@ -59,52 +57,40 @@ public class FraccionGUI extends Resultado {
         botonMultiplicacion.setBounds(220, 340, 70, 30);
         botonDivision.setBounds(220, 380, 70, 30);
 
-        botonSuma.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Fracciones.isAdding = true;
-                Fracciones.fracverify = true;
-                includeVars();
-                Fe.calc(n1, d1, n2, d2);
-                Operaciones.sumaresta();
-                butF();
-            }
+        botonSuma.addActionListener(e -> {
+            Fracciones.isAdding = true;
+            Fracciones.fracverify = true;
+            includeVars();
+            Fe.calc(n1, d1, n2, d2);
+            Operaciones.sumaresta();
+            butF();
         });
 
-        botonResta.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Fracciones.isAdding = false;
-                Fracciones.fracverify = true;
-                includeVars();
-                Fe.calc(n1, d1, n2, d2);
-                Operaciones.sumaresta();
-                butF();
-            }
+        botonResta.addActionListener(e -> {
+            Fracciones.isAdding = false;
+            Fracciones.fracverify = true;
+            includeVars();
+            Fe.calc(n1, d1, n2, d2);
+            Operaciones.sumaresta();
+            butF();
         });
 
-        botonMultiplicacion.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Fracciones.isMultiplying = true;
-                Fracciones.fracverify = true;
-                includeVars();
-                Fe.calc(n1, d1, n2, d2);
-                Operaciones.multiplicaciondivision();
-                butF();
-            }
+        botonMultiplicacion.addActionListener(e -> {
+            Fracciones.isMultiplying = true;
+            Fracciones.fracverify = true;
+            includeVars();
+            Fe.calc(n1, d1, n2, d2);
+            Operaciones.multiplicaciondivision();
+            butF();
         });
 
-        botonDivision.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Fracciones.isMultiplying = false;
-                Fracciones.fracverify = true;
-                includeVars();
-                Fe.calc(n1, d1, n2, d2);
-                Operaciones.multiplicaciondivision();
-                butF();
-            }
+        botonDivision.addActionListener(e -> {
+            Fracciones.isMultiplying = false;
+            Fracciones.fracverify = true;
+            includeVars();
+            Fe.calc(n1, d1, n2, d2);
+            Operaciones.multiplicaciondivision();
+            butF();
         });
 
         SubNivelGUI.frameDef.add(numerador1);

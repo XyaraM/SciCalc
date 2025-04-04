@@ -5,8 +5,6 @@ import GUI.Core.Resultado;
 import GUI.Core.SubNivelGUI;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ProgresionGUI extends Resultado {
     public static SubNivelGUI menuMadreProgresion = new SubNivelGUI();
@@ -37,36 +35,24 @@ public class ProgresionGUI extends Resultado {
         SubNivelGUI.frameDef.add(sumaTerminos);
         SubNivelGUI.frameDef.add(NEsimoPro);
 
-        terminoNEsimo.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                volver();
-                terminoNEsimo();
-            }
+        terminoNEsimo.addActionListener(e -> {
+            volver();
+            terminoNEsimo();
         });
 
-        generalDif.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                volver();
-                generalDif();
-            }
+        generalDif.addActionListener(e -> {
+            volver();
+            generalDif();
         });
 
-        sumaTerminos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                volver();
-                sumaDif();
-            }
+        sumaTerminos.addActionListener(e -> {
+            volver();
+            sumaDif();
         });
 
-        NEsimoPro.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                volver();
-                NEsimoSucesion();
-            }
+        NEsimoPro.addActionListener(e -> {
+            volver();
+            NEsimoSucesion();
         });
     }
 

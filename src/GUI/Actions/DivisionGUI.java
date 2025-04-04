@@ -6,9 +6,6 @@ import GUI.Core.SimboloSRMDGUI;
 import GUI.Core.SubNivelGUI;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class DivisionGUI extends Resultado {
     public int firstEntry;
@@ -48,15 +45,12 @@ public class DivisionGUI extends Resultado {
         botonResultado.setBounds(145, 230, 200, 100);
 
 
-        botonResultado.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                firstEntry = Integer.parseInt(divi1.getText());
-                secondEntry = Integer.parseInt(divi2.getText());
-                D.calc(firstEntry, secondEntry);
-                butP();
+        botonResultado.addActionListener(e -> {
+            firstEntry = Integer.parseInt(divi1.getText());
+            secondEntry = Integer.parseInt(divi2.getText());
+            D.calc(firstEntry, secondEntry);
+            butP();
 
-            }
         });
 
         SubNivelGUI.frameDef.add(divi1);

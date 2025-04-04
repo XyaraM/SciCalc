@@ -6,9 +6,6 @@ import GUI.Core.SimboloSRMDGUI;
 import GUI.Core.SubNivelGUI;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MultiplicacionGUI extends Resultado {
     public int firstTerm;
@@ -48,16 +45,13 @@ public class MultiplicacionGUI extends Resultado {
         botonResultado.setBounds(145, 230, 200, 100);
 
 
-        botonResultado.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        botonResultado.addActionListener(e -> {
 
-                firstTerm = Integer.parseInt(multi1.getText());
-                secondTerm = Integer.parseInt(multi2.getText());
-                M.calc(firstTerm, secondTerm);
-                butP();
+            firstTerm = Integer.parseInt(multi1.getText());
+            secondTerm = Integer.parseInt(multi2.getText());
+            M.calc(firstTerm, secondTerm);
+            butP();
 
-            }
         });
 
         SubNivelGUI.frameDef.add(multi1);

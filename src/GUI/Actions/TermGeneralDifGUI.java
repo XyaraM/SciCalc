@@ -7,8 +7,6 @@ import PAritmetica.TermGeneralDif;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TermGeneralDifGUI extends Resultado {
     public int r1;
@@ -53,16 +51,13 @@ public class TermGeneralDifGUI extends Resultado {
         SubNivelGUI.frameDef.add(text);
 
 
-        botonCalculo.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                r1 = Integer.parseInt(t1.getText());
-                r2 = Integer.parseInt(t2.getText());
-                r3 = Integer.parseInt(t3.getText());
+        botonCalculo.addActionListener(e -> {
+            r1 = Integer.parseInt(t1.getText());
+            r2 = Integer.parseInt(t2.getText());
+            r3 = Integer.parseInt(t3.getText());
 
-                termGeneral.calc(r1, r2, r3);
-                butP();
-            }
+            termGeneral.calc(r1, r2, r3);
+            butP();
         });
     }
 

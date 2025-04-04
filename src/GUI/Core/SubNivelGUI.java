@@ -10,6 +10,8 @@ public class SubNivelGUI extends Resultado{
         frameDef = NombreJFrame;
         frameDef = new JFrame();
         frameDef.setSize(500, 600);
+        frameDef.setMinimumSize(new Dimension(500, 600));
+        frameDef.setMaximizedBounds(new Rectangle(500, 600));
         frameDef.setLayout(null);
         frameDef.setVisible(true);
         frameDef.getContentPane().setBackground(Color.darkGray);

@@ -1,6 +1,5 @@
 package GUI.Core;
 import Actions.Calculacion;
-import Fractions.Operaciones;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,7 +32,6 @@ public class Resultado {
         divDenominador.setForeground(Color.white);
         SubNivelGUI.frameDef.add(divSimbolo);
         SubNivelGUI.frameDef.add(divDenominador);
-        System.out.println("Im repeating");
         resultado.setText(String.valueOf(fracNumerador));
 
 

@@ -7,8 +7,6 @@ import PAritmetica.TerminoNesimoDif;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TerminoNEsimoGUI extends Resultado {
 
@@ -56,16 +54,13 @@ public class TerminoNEsimoGUI extends Resultado {
         SubNivelGUI.frameDef.add(text);
         new BotonVolverGUI(SubNivelGUI.frameDef); // Crea el boton volver
 
-        calcular.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                p1 = Integer.parseInt(primerTermino.getText());
-                p2 = Integer.parseInt(posicionTermino.getText());
-                p3 = Integer.parseInt(posicionAK.getText());
-                p4 = Integer.parseInt(diferencia.getText());
-                instNE.calcGUI(p1, p2, p3, p4);
-                butP();
-            }
+        calcular.addActionListener(e -> {
+            p1 = Integer.parseInt(primerTermino.getText());
+            p2 = Integer.parseInt(posicionTermino.getText());
+            p3 = Integer.parseInt(posicionAK.getText());
+            p4 = Integer.parseInt(diferencia.getText());
+            instNE.calcGUI(p1, p2, p3, p4);
+            butP();
         });
 
     }

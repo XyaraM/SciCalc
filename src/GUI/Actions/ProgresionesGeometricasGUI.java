@@ -7,8 +7,6 @@ import PGeometrica.NEsimoSucesion;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ProgresionesGeometricasGUI extends Resultado {
     public int r1;
@@ -47,14 +45,11 @@ public class ProgresionesGeometricasGUI extends Resultado {
         SubNivelGUI.frameDef.add(text);
         new BotonVolverGUI(SubNivelGUI.frameDef);
 
-        botonCalculo.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                r1 = Integer.parseInt(t1.getText());
-                r2 = Integer.parseInt(t2.getText());
-                geoNE.calcNE(r1, r2);
-                butP();
-            }
+        botonCalculo.addActionListener(e -> {
+            r1 = Integer.parseInt(t1.getText());
+            r2 = Integer.parseInt(t2.getText());
+            geoNE.calcNE(r1, r2);
+            butP();
         });
     }
 
