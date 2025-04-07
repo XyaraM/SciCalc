@@ -8,8 +8,8 @@ import GUI.Core.SubNivelGUI;
 import javax.swing.*;
 
 public class DivisionGUI extends Resultado {
-    public int firstEntry;
-    public int secondEntry;
+    public float firstEntry;
+    public float secondEntry;
 
     public DivisionGUI(){
         menuDivi();
@@ -17,7 +17,7 @@ public class DivisionGUI extends Resultado {
 
     Division D = new Division(){
         @Override
-        public void calc(int s1, int s2) {
+        public void calc(float s1, float s2) {
             super.calc(s1, s2);
         }
     };
@@ -46,8 +46,8 @@ public class DivisionGUI extends Resultado {
 
 
         botonResultado.addActionListener(e -> {
-            firstEntry = Integer.parseInt(divi1.getText());
-            secondEntry = Integer.parseInt(divi2.getText());
+            firstEntry = Float.parseFloat(divi1.getText());
+            secondEntry = Float.parseFloat(divi2.getText());
             D.calc(firstEntry, secondEntry);
             butP();
 

@@ -1,7 +1,7 @@
 package Actions;
 
 public class Resta extends Calculacion {
-    public Resta(int firstEntry, int secondEntry){
+    public Resta(float firstEntry, float secondEntry){
         calc(firstEntry, secondEntry);
     }
 
@@ -9,7 +9,7 @@ public class Resta extends Calculacion {
 
     }
 
-    public void calc(int s1, int s2){
+    public void calc(float s1, float s2){
         result = s1 - s2;
 
     }

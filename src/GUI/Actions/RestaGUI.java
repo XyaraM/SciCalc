@@ -11,12 +11,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RestaGUI extends Resultado {
-    public int firstTerm;
-    public int secondTerm;
+    public float firstTerm;
+    public float secondTerm;
 
     Resta R = new Resta(){
         @Override
-        public void calc(int s1, int s2) {
+        public void calc(float s1, float s2) {
             super.calc(s1, s2);
         }
     };
@@ -52,8 +52,8 @@ public class RestaGUI extends Resultado {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                firstTerm = Integer.parseInt(resta.getText());
-                secondTerm = Integer.parseInt(resta2.getText());
+                firstTerm = Float.parseFloat(resta.getText());
+                secondTerm = Float.parseFloat(resta2.getText());
                 R.calc(firstTerm, secondTerm);
                 butP();
             }

@@ -29,19 +29,19 @@ public class Main {
             String selection = bootup.nextLine();
             if(selection.equals("1")){
                 System.out.println("Inserte los numeros que desea sumar");
-                Suma calc = new Suma(bootup.nextInt(), bootup.nextInt());
+                Suma calc = new Suma(bootup.nextFloat(), bootup.nextFloat());
                 calc.displayResult();
             } else if (selection.equals("2")) {
                 System.out.println("Inserte los numeros que desea restar");
-                Resta calc = new Resta(bootup.nextInt(), bootup.nextInt());
+                Resta calc = new Resta(bootup.nextFloat(), bootup.nextFloat());
                 calc.displayResult();
             } else if (selection.equals("3")) {
                 System.out.println("Inserte los numeros que desea multiplicar");
-                Multiplicacion calc = new Multiplicacion(bootup.nextInt(), bootup.nextInt());
+                Multiplicacion calc = new Multiplicacion(bootup.nextFloat(), bootup.nextFloat());
                 calc.displayResult();
             } else if (selection.equals("4")) {
                 System.out.println("Inserte los numeros que desea dividir");
-                Division calc = new Division(bootup.nextInt(), bootup.nextInt());
+                Division calc = new Division(bootup.nextFloat(), bootup.nextFloat());
                 calc.displayResult();
             } else if (selection.equals("5")){
                 System.out.println("""

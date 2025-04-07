@@ -1,7 +1,7 @@
 package Actions;
 
 public class Calculacion {
-    public static int result;
+    public static float result;
     public static String resultStr;
     public static boolean fracverify;
     public static boolean isGuiOpen;

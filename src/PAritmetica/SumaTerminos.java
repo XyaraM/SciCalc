@@ -3,12 +3,12 @@ package PAritmetica;
 import Actions.Calculacion;
 
 public class SumaTerminos extends Calculacion {
-    int PrimerTermino;
-    int UltimoTermino;
-    int NumeroTerminos;
-    int SumaPU;
-    int ResSumaPU;
-    int FinalResult;
+    float PrimerTermino;
+    float UltimoTermino;
+    float NumeroTerminos;
+    float SumaPU;
+    float ResSumaPU;
+    float FinalResult;
 
     public SumaTerminos(int s1, int s2, int s3) {
         calcTotal(s1, s2, s3);

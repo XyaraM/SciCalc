@@ -12,13 +12,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SumaGUI extends Resultado {
-    public int firstTerm;
-    public int secondTerm;
+    public float firstTerm;
+    public float secondTerm;
 
     //Se instancia y se hace un override a Suma.java, calc es el metodo que se encarga de sumar s1 y s2, para luego guardarlo en la variable de resultado
     Suma S = new Suma(){
         @Override
-        public void calc(int s1, int s2) {
+        public void calc(float s1, float s2) {
             super.calc(s1, s2);
         }
     };
@@ -61,8 +61,8 @@ public class SumaGUI extends Resultado {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                firstTerm = Integer.parseInt(suma.getText());
-                secondTerm = Integer.parseInt(suma2.getText());
+                firstTerm = Float.parseFloat(suma.getText());
+                secondTerm = Float.parseFloat(suma2.getText());
                 S.calc(firstTerm, secondTerm);
                 butP();
             }

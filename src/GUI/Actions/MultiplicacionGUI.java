@@ -8,12 +8,12 @@ import GUI.Core.SubNivelGUI;
 import javax.swing.*;
 
 public class MultiplicacionGUI extends Resultado {
-    public int firstTerm;
-    public int secondTerm;
+    public float firstTerm;
+    public float secondTerm;
 
     Multiplicacion M = new Multiplicacion(){
         @Override
-        public void calc(int s1, int s2) {
+        public void calc(float s1, float s2) {
             super.calc(s1, s2);
         }
     };
@@ -47,8 +47,8 @@ public class MultiplicacionGUI extends Resultado {
 
         botonResultado.addActionListener(e -> {
 
-            firstTerm = Integer.parseInt(multi1.getText());
-            secondTerm = Integer.parseInt(multi2.getText());
+            firstTerm = Float.parseFloat(multi1.getText());
+            secondTerm = Float.parseFloat(multi2.getText());
             M.calc(firstTerm, secondTerm);
             butP();
 
