@@ -1,5 +1,4 @@
 package GUI.Core;
-
 import GUI.Actions.ProgresionGUI;
 
 import javax.swing.*;

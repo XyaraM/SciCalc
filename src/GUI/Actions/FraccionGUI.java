@@ -34,6 +34,7 @@ public class FraccionGUI extends Resultado {
 
     public FraccionGUI(){
         fraGUI();
+        fracActivate();
     }
 
     public void fraGUI(){
@@ -42,11 +43,11 @@ public class FraccionGUI extends Resultado {
         F.menuOperaciones(new JFrame());
         calculo(SubNivelGUI.frameDef);
 
-
         JButton botonSuma = new JButton("Suma");
         JButton botonResta = new JButton("Resta");
         JButton botonMultiplicacion = new JButton("Multiplicacion");
         JButton botonDivision = new JButton("Division");
+
 
         numerador1.setBounds(170, 100, 50, 50);
         denominador1.setBounds(170, 160, 50, 50);
